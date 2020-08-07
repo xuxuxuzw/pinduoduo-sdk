@@ -6,7 +6,7 @@
  * Time: 15:05.
  */
 
-namespace Justmd5\PinDuoDuo\Oauth;
+namespace Xuxuxuzw\PinDuoDuo\Oauth;
 
 use Hanson\Foundation\Foundation;
 use Pimple\Container;

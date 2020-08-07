@@ -6,9 +6,9 @@
  * Time: 15:05.
  */
 
-namespace Justmd5\PinDuoDuo\Oauth;
+namespace Xuxuxuzw\PinDuoDuo\Oauth;
 
-use Justmd5\PinDuoDuo\PinDuoDuo;
+use Xuxuxuzw\PinDuoDuo\PinDuoDuo;
 
 class PreAuth
 {
