@@ -6,13 +6,13 @@
  * Time: 15:05.
  */
 
-namespace Justmd5\PinDuoDuo;
+namespace Xuxuxuzw\PinDuoDuo;
 
 use Hanson\Foundation\AbstractAPI;
 
 class Api extends AbstractAPI
 {
-    const URL = 'http://gw-api.pinduoduo.com/api/router';
+    private $url = 'http://gw-api.pinduoduo.com/api/router';
 
     /**
      * @var pinduoduo
@@ -25,6 +25,10 @@ class Api extends AbstractAPI
         parent::__construct($pinduoduo);
         $this->pinduoduo = $pinduoduo;
         $this->needToken = $needToken;
+
+        if(!empty($pinduoduo->getConfig('api_url'))){
+            $this->url = $pinduoduo->getConfig('api_url');
+        }
     }
 
     /**
@@ -65,7 +69,7 @@ class Api extends AbstractAPI
         $params['data_type'] = $data_type;
         $params['timestamp'] = strval(time());
         $params['sign'] = $this->signature($params);
-        $response = call_user_func_array([$http, 'post'], [self::URL, $params]);
+        $response = call_user_func_array([$http, 'post'], [$this->url, $params]);
         $responseBody = strval($response->getBody());
 
         return strtolower($data_type) == 'json' ? json_decode($responseBody, true) : $responseBody;

@@ -6,7 +6,7 @@
  * Time: 下午1:40.
  */
 
-namespace Justmd5\PinDuoDuo;
+namespace Xuxuxuzw\PinDuoDuo;
 
 use Hanson\Foundation\AbstractAccessToken;
 
